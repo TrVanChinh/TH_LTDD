@@ -14,11 +14,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button btnOpen=(Button) findViewById(R.id.btnOpen);
-        btnOpen.setOnClickListener(new View.OnClickListener() {
-                                               public void onClick(View arg0) {
-                                                   doOpenChildActivity();
-                                               }
-                                           });
+        btnOpen.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View arg0) {
+                doOpenChildActivity();
+            }
+        });
     }
     public void doOpenChildActivity()
     {

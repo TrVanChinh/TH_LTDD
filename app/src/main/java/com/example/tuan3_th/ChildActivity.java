@@ -14,13 +14,12 @@ public class ChildActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_child);
-        Button btnBack= (Button)
-                findViewById(R.id.btnBacktoMainActivity);
-        btnBack.setOnClickListener(new
-                                           View.OnClickListener() {
-                                               public void onClick(View v) {
-                                                   finish();
-                                               }
-                                           });
+        Button btnBack= (Button) findViewById(R.id.btnBacktoMainActivity);
+        btnBack.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }
