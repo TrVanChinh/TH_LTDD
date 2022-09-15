@@ -18,10 +18,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
     }
 
     @Override
-    public void onClick(View view) {
-        if(view.getId() == R.id.tvSignin) {
-            Intent intent = new Intent(this, signIn.class);
-            startActivity(intent);
-        }
+    public void onClick(View view)  {
+        finish();
     }
 }
