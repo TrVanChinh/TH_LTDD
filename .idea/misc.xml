@@ -3,9 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/drawable-ldpi/dong_background.xml" value="0.1705" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.186" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/drawable/background_btn_profile.xml" value="0.186" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/drawable/background_button.xml" value="0.1705" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/drawable/background_home.xml" value="0.186" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/drawable/background_name_pass.xml" value="0.186" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/drawable/border_edtext.xml" value="0.186" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/drawable/circle_background.xml" value="0.186" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/drawable/grey_background.xml" value="0.186" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.186" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.186" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.186" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.186" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/drawable/top_background.xml" value="0.186" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/layout/activity_home.xml" value="0.2" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/layout/activity_listview.xml" value="0.264" />
         <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/layout/activity_main.xml" value="0.21784420289855072" />
-        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/layout/activity_sign_in.xml" value="0.21784420289855072" />
-        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/layout/activity_signup.xml" value="0.21784420289855072" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/layout/activity_main2.xml" value="0.264" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/layout/activity_signup.xml" value="0.176" />
+        <entry key="..\:/DEMOAndroid/Profile/app/src/main/res/layout/dong_game.xml" value="0.25" />
         <entry key="..\:/profile/app/src/main/res/drawable/background_button.xml" value="0.1895" />
         <entry key="..\:/profile/app/src/main/res/drawable/circle_background.xml" value="0.1895" />
         <entry key="..\:/profile/app/src/main/res/drawable/grey_background.xml" value="0.1895" />

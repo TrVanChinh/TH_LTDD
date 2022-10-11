@@ -35,7 +35,7 @@ public class signIn extends AppCompatActivity implements View.OnClickListener{
         if(view.getId() == R.id.btnSignin){
             if (ten.equals("Chinhtran") && matkhau.equals("1234"))
             {
-                    Intent intent = new Intent(this, MainActivity.class);
+                    Intent intent = new Intent(this, home.class);
                     startActivity(intent);
                 }
             else
