@@ -22,9 +22,9 @@ public class SinhVienDao {
         csdl = new DBhelper(context);
     }
 
-    public List<SinhVien> LoadDataSinhVien(String malop) {
+    public List<SinhVien> LoadDataSinhVien(String tenlop) {
 
-        String sql = "SELECT masv, tensv, malop FROM tblsinhvien WHERE malop ='"+malop+ "'";
+        String sql = "SELECT masv, tensv, tenLop FROM tblsinhvien WHERE tenLop ='"+tenlop+ "'";
         List<SinhVien>  sinhVienList = new ArrayList<SinhVien>();
         SQLiteDatabase database = csdl.getReadableDatabase();
         Cursor cursor = database.rawQuery(sql, null);
@@ -32,35 +32,44 @@ public class SinhVienDao {
         while (!cursor.isAfterLast()) {
             String msv = cursor.getString(0);
             String tensv = cursor.getString(1);
-            String lophocphan = cursor.getString(2);
-            SinhVien sv =new SinhVien(msv,tensv,lophocphan);
+            String tenLop = cursor.getString(2);
+            SinhVien sv =new SinhVien(msv,tensv,tenLop);
             sinhVienList.add(sv);
 
             cursor.moveToNext();
         }
         return sinhVienList;
     }
-    public String LoadLop(String malop) {
-        String sql = "SELECT * FROM tbllop Where malop='"+malop+ "'";
-        SQLiteDatabase database = csdl.getReadableDatabase();
-        Cursor cursor = database.rawQuery(sql, null);
-        @SuppressLint("Range") String tenlop = cursor.getString(cursor.getColumnIndex("tenlop"));
-        return tenlop;
+
+    public void CapNhatSinhVien(SinhVien sv){
+        SQLiteDatabase database = csdl.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("tensv",sv.getTensv());
+        values.put("namsinh",String.valueOf(sv.getNamsinh()));
+        values.put("DiemToan",String.valueOf(sv.getDiemToan()));
+        values.put("DiemAnh",String.valueOf(sv.getDiemAnh()));
+        values.put("DiemTin",String.valueOf(sv.getDiemTin()));
+        values.put("tenLop",sv.getTenLop());
+        String masv = String.valueOf(sv.getMsv());
+        String thamso[] = {masv};
+        database.update("tblsinhvien",values,"masv=?",thamso);
     }
+
     public int delete(String id){
         SQLiteDatabase database = csdl.getWritableDatabase();
         return database.delete("tblsinhvien","masv=?", new String[]{id});
     }
 
-    public void ThemSinhVien(SinhVien sv){
+    public long ThemSinhVien(SinhVien sv){
         SQLiteDatabase database = csdl.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("Ten",sv.getTensv());
-        values.put("NamSinh",sv.getNamsinh());
-        values.put("DiemToan",sv.getDiemToan());
-        values.put("DiemAnh",sv.getDiemAnh());
-        values.put("DiemTin",sv.getDiemTin());
-        values.put("DiemTin",sv.getDiemTin());
-        database.insert("tblsinhvien","",values);
+        values.put("masv",sv.getMsv());
+        values.put("tensv",sv.getTensv());
+        values.put("namsinh",String.valueOf(sv.getNamsinh()));
+        values.put("DiemToan",String.valueOf(sv.getDiemToan()));
+        values.put("DiemAnh",String.valueOf(sv.getDiemAnh()));
+        values.put("DiemTin",String.valueOf(sv.getDiemTin()));
+        values.put("tenLop",sv.getTenLop());
+        return database.insert("tblsinhvien",null,values);
     }
 }

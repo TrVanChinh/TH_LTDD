@@ -5,29 +5,29 @@ import java.io.Serializable;
 public class SinhVien implements Serializable {
     private String msv;
     private String tensv;
-    private String malophoc;
+    private String tenLop;
     private int namsinh;
-    private int DiemToan;
-    private int DiemTin;
-    private int DiemAnh;
+    private float DiemToan;
+    private float DiemTin;
+    private float DiemAnh;
 
     public SinhVien() {
     }
 
-    public SinhVien(String msv, String tensv, String malophoc, int namsinh, int diemToan, int diemTin, int diemAnh) {
+    public SinhVien(String msv, String tensv, String tenLop, int namsinh, float diemToan, float diemTin, float diemAnh) {
         this.msv = msv;
         this.tensv = tensv;
-        this.malophoc = malophoc;
+        this.tenLop = tenLop;
         this.namsinh = namsinh;
         DiemToan = diemToan;
         DiemTin = diemTin;
         DiemAnh = diemAnh;
     }
 
-    public SinhVien(String msv, String tensv, String malophoc) {
+    public SinhVien(String msv, String tensv, String tenLop) {
         this.msv = msv;
         this.tensv = tensv;
-        this.malophoc = malophoc;
+        this.tenLop = tenLop;
     }
 
     public int getNamsinh() {
@@ -36,30 +36,6 @@ public class SinhVien implements Serializable {
 
     public void setNamsinh(int namsinh) {
         this.namsinh = namsinh;
-    }
-
-    public int getDiemToan() {
-        return DiemToan;
-    }
-
-    public void setDiemToan(int diemToan) {
-        DiemToan = diemToan;
-    }
-
-    public int getDiemTin() {
-        return DiemTin;
-    }
-
-    public void setDiemTin(int diemTin) {
-        DiemTin = diemTin;
-    }
-
-    public int getDiemAnh() {
-        return DiemAnh;
-    }
-
-    public void setDiemAnh(int diemAnh) {
-        DiemAnh = diemAnh;
     }
 
     public String getMsv() {
@@ -78,11 +54,35 @@ public class SinhVien implements Serializable {
         this.tensv = tensv;
     }
 
-    public String getMalophoc() {
-        return malophoc;
+    public String getTenLop() {
+        return tenLop;
     }
 
-    public void setMalophoc(String malophoc) {
-        this.malophoc = malophoc;
+    public void setTenLop(String tenLop) {
+        this.tenLop = tenLop;
+    }
+
+    public float getDiemToan() {
+        return DiemToan;
+    }
+
+    public void setDiemToan(float diemToan) {
+        DiemToan = diemToan;
+    }
+
+    public float getDiemTin() {
+        return DiemTin;
+    }
+
+    public void setDiemTin(float diemTin) {
+        DiemTin = diemTin;
+    }
+
+    public float getDiemAnh() {
+        return DiemAnh;
+    }
+
+    public void setDiemAnh(float diemAnh) {
+        DiemAnh = diemAnh;
     }
 }

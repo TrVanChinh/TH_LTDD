@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import com.example.thsqlite.Adapter.SinhVienAdapter;
 import com.example.thsqlite.dao.SinhVienDao;
@@ -20,25 +20,36 @@ public class listSinhvien extends AppCompatActivity {
     private List<SinhVien> SinhVienList;
     private SinhVienAdapter SVadapter;
     private SinhVienDao SVdao;
+    private Button btnThem;
 
 
+    private String Tenlop;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_sinhvien);
 
         lvSinhVien = findViewById(R.id.lvSinhVien);
-
+        btnThem = findViewById(R.id.buttonThem);
         Intent intent = this.getIntent();
-        String Malop = intent.getStringExtra("id");
+        Tenlop = intent.getStringExtra("id");
+
 
         SinhVienList = new ArrayList<SinhVien>();
         SVdao = new SinhVienDao(listSinhvien.this);
-        SinhVienList = SVdao.LoadDataSinhVien(Malop);
+        SinhVienList = SVdao.LoadDataSinhVien(Tenlop);
 
         SVadapter = new SinhVienAdapter(getApplicationContext(),SinhVienList);
         lvSinhVien.setAdapter(SVadapter);
         SuKien_ListView();
+
+        btnThem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(listSinhvien.this, AddSV.class);
+                startActivity(intent);
+            }
+        });
 
     }
     private void SuKien_ListView(){
@@ -51,5 +62,13 @@ public class listSinhvien extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+    }
+
+    protected void onResume() {
+        super.onResume();
+        SinhVienList.clear();
+        SinhVienList.addAll(SVdao.LoadDataSinhVien(Tenlop));
+        SVadapter.notifyDataSetChanged();
     }
 }

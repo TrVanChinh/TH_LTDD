@@ -2,6 +2,7 @@ package com.example.thsqlite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ public class detail extends AppCompatActivity {
     private EditText editTen, editNamSinh, editLop, editDiemToan, editDiemTin, editDiemAnh, editDiemTB;
     private Button Sua, Xoa, Thoat;
     private SinhVienDao svDAO;
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,16 +30,27 @@ public class detail extends AppCompatActivity {
 
         editTen.setText(sinhvien.getTensv());
         editNamSinh.setText(Integer.toString(sinhvien.getNamsinh()));
-        editDiemToan.setText(Integer.toString(sinhvien.getDiemToan()));
-        editDiemTin.setText(Integer.toString(sinhvien.getDiemTin()));
-        editDiemAnh.setText(Integer.toString(sinhvien.getDiemAnh()));
-
-        editLop.setText(svDAO.LoadLop(sinhvien.getMalophoc()));
-
+        editDiemToan.setText(Float.toString(sinhvien.getDiemToan()));
+        editDiemTin.setText(Float.toString(sinhvien.getDiemTin()));
+        editDiemAnh.setText(Float.toString(sinhvien.getDiemAnh()));
+        editLop.setText(sinhvien.getTenLop());
         float dtb = (sinhvien.getDiemAnh() + sinhvien.getDiemToan() + sinhvien.getDiemTin())/3;
         editDiemTB.setText(Float.toString(dtb));
 
 
+
+        Sua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sinhvien.setTensv(editTen.getText().toString());
+                sinhvien.setTenLop(editLop.getText().toString());
+                sinhvien.setNamsinh(Integer.parseInt(editNamSinh.getText().toString()));
+                sinhvien.setDiemToan(Float.parseFloat(editDiemToan.getText().toString()));
+                sinhvien.setDiemTin(Float.parseFloat(editDiemTin.getText().toString()));
+                sinhvien.setDiemAnh(Float.parseFloat(editDiemAnh.getText().toString()));
+                svDAO.CapNhatSinhVien(sinhvien);
+            }
+        });
 
         Thoat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +78,7 @@ public class detail extends AppCompatActivity {
         editDiemTin = (EditText) findViewById(R.id.edDiemTin);
         editDiemAnh = (EditText) findViewById(R.id.edDiemAnh);
         editDiemTB = (EditText) findViewById(R.id.edMsv);
+
         Sua = (Button) findViewById(R.id.btnThem);
         Xoa = (Button) findViewById(R.id.btnXoa);
         Thoat = (Button) findViewById(R.id.btnThoat);

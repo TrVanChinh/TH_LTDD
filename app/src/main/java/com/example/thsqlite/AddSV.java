@@ -19,16 +19,18 @@ public class AddSV extends AppCompatActivity {
         setContentView(R.layout.activity_add_sv);
         svDAO = new SinhVienDao(AddSV.this);
 
+        AnhXa();
         Them.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String Masv = editMSV.getText().toString();
-                String hoten = editTen.getText().toString();
-                int namsinh = editNamSinh.
-                String hoten = editLop.getText().toString();
-
-                String dienthoai = edtDienThoai112.getText().toString();
-                SinhVien sv = new SinhVien(hoten,gioitinh112,dienthoai,email);
+                SinhVien sv = new SinhVien();
+                sv.setMsv(editMSV.getText().toString());
+                sv.setTensv(editTen.getText().toString());
+                sv.setTenLop(editLop.getText().toString());
+                sv.setNamsinh(Integer.parseInt(editNamSinh.getText().toString()));
+                sv.setDiemToan(Float.parseFloat(editDiemToan.getText().toString()));
+                sv.setDiemTin(Float.parseFloat(editDiemTin.getText().toString()));
+                sv.setDiemAnh(Float.parseFloat(editDiemAnh.getText().toString()));
                 svDAO.ThemSinhVien(sv);
             }
         });

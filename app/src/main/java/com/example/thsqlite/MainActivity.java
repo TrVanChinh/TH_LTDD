@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Lop lop = (Lop) LopList.get(position);
                 Intent intent = new Intent(MainActivity.this, listSinhvien.class);
-                intent.putExtra("id", lop.getMalop());
+                intent.putExtra("id", lop.getTenlop());
                 startActivity(intent);
             }
         });

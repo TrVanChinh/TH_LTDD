@@ -57,7 +57,7 @@ public class SinhVienAdapter extends BaseAdapter {
         SinhVien sv = SinhVienList.get(i);
         viewHolder.tvmsv.setText("Mã sinh viên: "+sv.getMsv());
         viewHolder.tvTen.setText("Tên: "+sv.getTensv());
-        viewHolder.tvmalophoc.setText("Mã lớp: "+sv.getMalophoc());
+        viewHolder.tvmalophoc.setText("Mã lớp: "+sv.getTenLop());
 
         return view;
     }

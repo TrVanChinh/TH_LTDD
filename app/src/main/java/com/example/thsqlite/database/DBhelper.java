@@ -22,15 +22,15 @@ public class DBhelper extends SQLiteOpenHelper {
         String sqlCreateSinhVien = "CREATE TABLE IF NOT EXISTS tblsinhvien (" +
                 "masv TEXT PRIMARY KEY ," +
                 "tensv TEXT, " +
-                "namsinh INTEGER, " +
-                "DiemToan INTEGER, " +
-                "DiemTin INTEGER, " +
-                "DiemAnh INTEGER, " +
-                "malop TEXT) ";
+                "namsinh int, " +
+                "DiemToan float, " +
+                "DiemTin float, " +
+                "DiemAnh float, " +
+                "tenLop TEXT) ";
         sqLiteDatabase.execSQL(sqlCreateSinhVien);
 
         String sqlInsertLop ="INSERT INTO tbllop (malop, tenlop, siso) VALUES ('DHTH7C','Dai hoc 7C',30),('DHTH8C','Dai hoc 8C',40),('DHTH9C','Dai hoc 9C',50) ";
-        String sqlInsertSinhVien ="INSERT INTO tblsinhvien (masv, tensv, namsinh,DiemToan, DiemTin, DiemAnh, malop) VALUES ('0112','Tran Van Chinh',2002, 9,9,9,'DHTH7C'),('0113','Le Quang Tu',2002, 8,8,8,'DHTH7C'),('0115','Le The Sinh',2002, 7,7,7,'DHTH7C') ";
+        String sqlInsertSinhVien ="INSERT INTO tblsinhvien (masv, tensv, namsinh,DiemToan, DiemTin, DiemAnh, tenLop) VALUES ('0112','Tran Van Chinh',2002, 9.0,9.0,9.0,'Dai hoc 7C'),('0113','Le Quang Tu',2002, 8.0,8.0,8.5,'Dai hoc 7C'),('0115','Le The Sinh',2002, 7.6,7.5,7.0,'Dai hoc 7C') ";
         sqLiteDatabase.execSQL(sqlInsertLop);
         sqLiteDatabase.execSQL(sqlInsertSinhVien);
 
